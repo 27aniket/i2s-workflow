@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -154,7 +153,6 @@
     }
 
     /* NAVBAR */
-
     .navbar {
       position: sticky;
       top: 0;
@@ -243,7 +241,6 @@
     }
 
     /* HERO */
-
     .hero {
       position: relative;
       min-height: 650px;
@@ -253,10 +250,10 @@
       overflow: hidden;
       background:
         linear-gradient(100deg,
-          rgba(8, 39, 24, 0.94) 0%,
-          rgba(13, 65, 38, 0.84) 48%,
-          rgba(12, 55, 34, 0.58) 100%),
-        url("images/hero-bg.jpg") center / cover no-repeat;
+          rgba(8, 39, 24, 0.85) 0%,
+          rgba(13, 65, 38, 0.70) 48%,
+          rgba(12, 55, 34, 0.50) 100%),
+        url("images/bg.png") center / cover no-repeat;
     }
 
     .hero::before {
@@ -265,10 +262,8 @@
       inset: 0;
       z-index: -1;
       background:
-        radial-gradient(circle at 78% 20%,
-          rgba(177, 220, 137, 0.19), transparent 32%),
-        linear-gradient(0deg,
-          rgba(4, 28, 16, 0.2), transparent 60%);
+        radial-gradient(circle at 78% 20%, rgba(177, 220, 137, 0.19), transparent 32%),
+        linear-gradient(0deg, rgba(4, 28, 16, 0.2), transparent 60%);
     }
 
     .hero-inner {
@@ -434,7 +429,6 @@
     }
 
     /* HIGHLIGHTS */
-
     .highlights {
       position: relative;
       z-index: 2;
@@ -472,7 +466,6 @@
     }
 
     /* ABOUT */
-
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -561,7 +554,6 @@
     }
 
     /* PROJECTS */
-
     .projects-section {
       background: var(--light);
     }
@@ -659,8 +651,7 @@
       transform: translateX(5px);
     }
 
-    /* OUR CLIENTS: INFINITE MARQUEE */
-
+    /* CLIENTS MARQUEE */
     .clients-section {
       padding: 80px 0;
       overflow: hidden;
@@ -680,16 +671,8 @@
       width: 100%;
       overflow: hidden;
       padding: 18px 0;
-      -webkit-mask-image: linear-gradient(to right,
-          transparent,
-          black 7%,
-          black 93%,
-          transparent);
-      mask-image: linear-gradient(to right,
-          transparent,
-          black 7%,
-          black 93%,
-          transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
     }
 
     .client-track {
@@ -767,7 +750,6 @@
     }
 
     /* SERVICES */
-
     .services-section {
       background: var(--light);
     }
@@ -814,7 +796,6 @@
     }
 
     /* PROCESS */
-
     .process-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -847,14 +828,30 @@
       font-size: 13px;
     }
 
-    /* IMPACT BANNER */
+    /* APPROACH WORKFLOW IMAGE */
+    .approach-image {
+      margin-top: 45px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
 
+    .approach-scroll {
+      overflow-x: auto;
+    }
+
+    .approach-scroll img {
+      width: 100%;
+      min-width: 760px;
+      height: auto;
+    }
+
+    /* IMPACT BANNER */
     .impact-section {
       padding: 80px 0;
       background:
-        linear-gradient(100deg,
-          rgba(10, 54, 32, 0.94),
-          rgba(23, 107, 69, 0.86)),
+        linear-gradient(100deg, rgba(10, 54, 32, 0.94), rgba(23, 107, 69, 0.86)),
         url("images/impact-bg.jpg") center / cover no-repeat;
       color: white;
     }
@@ -910,7 +907,6 @@
     }
 
     /* TEAM */
-
     .team-section {
       background: white;
     }
@@ -975,33 +971,8 @@
     }
 
     /* CONTACT */
-
     .contact-section {
       background: var(--light);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 45px;
-      align-items: start;
-    }
-
-    .contact-info h2 {
-      font-size: clamp(30px, 4vw, 42px);
-      margin-bottom: 18px;
-    }
-
-    .contact-info>p {
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 22px;
     }
 
     .contact-detail-icon {
@@ -1016,94 +987,68 @@
       font-size: 19px;
     }
 
-    .contact-detail strong {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 3px;
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
     }
 
-    .contact-detail span,
-    .contact-detail a {
-      color: var(--muted);
-      font-size: 13px;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-form {
-      padding: 32px;
+    .contact-card {
+      padding: 28px 24px;
       background: white;
       border: 1px solid var(--border);
-      border-radius: 19px;
-      box-shadow: 0 8px 30px rgba(22, 67, 42, 0.04);
+      border-radius: 17px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .contact-form h3 {
-      font-size: 22px;
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card .contact-detail-icon {
+      margin-bottom: 16px;
+    }
+
+    .contact-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 13px;
+      user-select: text;
+    }
+
+    .copy-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
       margin-bottom: 6px;
     }
 
-    .form-intro {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 23px;
+    .copy-row a {
+      overflow-wrap: anywhere;
     }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    .copy-row a:hover {
+      color: var(--primary);
     }
 
-    .form-group {
-      margin-bottom: 17px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 12px 13px;
-      outline: none;
-      border: 1px solid #dce5dc;
-      border-radius: 7px;
-      background: #fcfdfb;
-      color: var(--text);
-      font-size: 13px;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(23, 107, 69, 0.09);
-    }
-
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .contact-form .btn {
-      width: 100%;
-    }
-
-    .form-note {
-      margin-top: 12px;
-      color: var(--muted);
+    .copy-btn {
+      padding: 2px 9px;
       font-size: 11px;
-      text-align: center;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--primary);
+      background: var(--primary-light);
+      border: 0;
+      border-radius: 5px;
     }
 
     /* FOOTER */
-
     .footer {
       background: #103e2a;
       color: white;
@@ -1191,8 +1136,7 @@
       transform: translateY(0);
     }
 
-    /* REVEAL ANIMATIONS */
-
+    /* REVEAL */
     .reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -1205,7 +1149,6 @@
     }
 
     /* RESPONSIVE */
-
     @media (max-width: 1050px) {
       .nav-links {
         gap: 13px;
@@ -1224,6 +1167,10 @@
       }
 
       .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -1295,8 +1242,7 @@
       }
 
       .about-grid,
-      .impact-inner,
-      .contact-grid {
+      .impact-inner {
         grid-template-columns: 1fr;
         gap: 35px;
       }
@@ -1349,25 +1295,6 @@
         top: 70px;
       }
 
-    .hero {
-  position: relative;
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  isolation: isolate;
-  overflow: hidden;
-
-  /* Background image for all screen sizes */
-  background:
-    linear-gradient(
-      100deg,
-      rgba(8, 39, 24, 0.65) 0%,
-      rgba(13, 65, 38, 0.40) 48%,
-      rgba(12, 55, 34, 0.20) 100%
-    ),
-    url("images/bg.png") center center / cover no-repeat;
-}
-
       .hero-description {
         font-size: 14px;
       }
@@ -1419,7 +1346,8 @@
 
       .project-grid,
       .services-grid,
-      .team-grid {
+      .team-grid,
+      .contact-cards {
         grid-template-columns: 1fr;
       }
 
@@ -1460,15 +1388,6 @@
 
       .team-image-wrap {
         height: 330px;
-      }
-
-      .contact-form {
-        padding: 23px 18px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
       }
 
       .footer-main {
@@ -1518,7 +1437,6 @@
 
       <a href="#home" class="brand" aria-label="I2S Home">
         <img src="images/i2s-logo.jpeg" alt="I2S Logo" class="brand-logo" onerror="this.style.display='none'">
-
         <div class="brand-name">
           I2S
           <small>INTENT TO SOLUTION PVT. LTD.</small>
@@ -1568,7 +1486,6 @@
             <a href="#projects" class="btn btn-primary">
               Explore Our Projects <span>→</span>
             </a>
-
             <a href="#about" class="btn btn-outline">
               Discover I2S
             </a>
@@ -1609,27 +1526,10 @@
     <!-- HIGHLIGHTS -->
     <section class="highlights" aria-label="Our approach">
       <div class="container highlights-grid">
-
-        <div class="highlight-item">
-          <strong>Nature</strong>
-          <span>Environment-focused initiatives</span>
-        </div>
-
-        <div class="highlight-item">
-          <strong>Innovation</strong>
-          <span>Technology-enabled solutions</span>
-        </div>
-
-        <div class="highlight-item">
-          <strong>Impact</strong>
-          <span>Purpose-driven execution</span>
-        </div>
-
-        <div class="highlight-item">
-          <strong>Partnership</strong>
-          <span>Working towards shared goals</span>
-        </div>
-
+        <div class="highlight-item"><strong>Nature</strong><span>Environment-focused initiatives</span></div>
+        <div class="highlight-item"><strong>Innovation</strong><span>Technology-enabled solutions</span></div>
+        <div class="highlight-item"><strong>Impact</strong><span>Purpose-driven execution</span></div>
+        <div class="highlight-item"><strong>Partnership</strong><span>Working towards shared goals</span></div>
       </div>
     </section>
 
@@ -1639,15 +1539,12 @@
 
         <div class="about-visual reveal">
           <img src="images/about-main.jpg" alt="Environmental plantation work" class="about-main-image" loading="lazy">
-
           <img src="images/about-small.jpg" alt="Green landscape" class="about-small-image" loading="lazy">
-
           <div class="about-label">Solutions with Purpose</div>
         </div>
 
         <div class="about-content reveal">
           <span class="eyebrow">About I2S</span>
-
           <h2>Turning Intentions Into Meaningful Solutions</h2>
 
           <p>
@@ -1663,27 +1560,13 @@
           </p>
 
           <ul class="check-list">
-            <li>
-              <span class="check">✓</span>
-              Environment-focused planning and implementation
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Digital documentation and monitoring solutions
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Collaboration with organisations and communities
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Long-term thinking for sustainable outcomes
-            </li>
+            <li><span class="check">✓</span>Environment-focused planning and implementation</li>
+            <li><span class="check">✓</span>Digital documentation and monitoring solutions</li>
+            <li><span class="check">✓</span>Collaboration with organisations and communities</li>
+            <li><span class="check">✓</span>Long-term thinking for sustainable outcomes</li>
           </ul>
 
-          <a href="#services" class="btn btn-primary">
-            Explore Our Expertise →
-          </a>
+          <a href="#services" class="btn btn-primary">Explore Our Expertise →</a>
         </div>
 
       </div>
@@ -1710,7 +1593,6 @@
                 loading="lazy">
               <span class="project-number">PROJECT 01</span>
             </div>
-
             <div class="project-content">
               <span class="project-category">Plantation</span>
               <h3>Sushee Plantation & Monitoring</h3>
@@ -1718,9 +1600,8 @@
                 Plantation documentation and monitoring supported by
                 date-wise images, videos and digital reporting.
               </p>
-              <a href="https://coalmine-tree-monitoring.vercel.app/" class="project-link">
-              View Project <span>→</span>
-              </a>
+              <a href="https://coalmine-tree-monitoring.vercel.app/" class="project-link">View Project
+                <span>→</span></a>
             </div>
           </article>
 
@@ -1730,7 +1611,6 @@
                 loading="lazy">
               <span class="project-number">PROJECT 02</span>
             </div>
-
             <div class="project-content">
               <span class="project-category">Community</span>
               <h3>Women-Led Plantation Initiatives</h3>
@@ -1738,19 +1618,16 @@
                 Encouraging community participation and inclusive
                 environmental action through plantation activities.
               </p>
-              <a href="https://women-environment.vercel.app/" class="project-link">
-                View Project <span>→</span>
-              </a>
+              <a href="https://women-environment.vercel.app/" class="project-link">View Project <span>→</span></a>
             </div>
           </article>
 
-          
           <article class="project-card reveal">
             <div class="project-image-wrap">
-              <img src="images/e-waste.png" alt="E-Waste Awareness and Collection Campaign" class="project-image" loading="lazy">
+              <img src="images/e-waste.png" alt="E-Waste Awareness and Collection Campaign" class="project-image"
+                loading="lazy">
               <span class="project-number">PROJECT 03</span>
             </div>
-          
             <div class="project-content">
               <span class="project-category">E-Waste Awareness & Sustainability</span>
               <h3>E-Waste Awareness Campaign</h3>
@@ -1760,12 +1637,9 @@
                 responsible electronic waste management and environmental
                 responsibility.
               </p>
-              <a href="https://ccl-greeninitiativel.vercel.app/" class="project-link">
-                View Project <span>→</span>
-              </a>
+              <a href="https://ccl-greeninitiativel.vercel.app/" class="project-link">View Project <span>→</span></a>
             </div>
           </article>
-        
 
           <article class="project-card reveal">
             <div class="project-image-wrap">
@@ -1773,7 +1647,6 @@
                 loading="lazy">
               <span class="project-number">PROJECT 04</span>
             </div>
-
             <div class="project-content">
               <span class="project-category">Digital Innovation</span>
               <h3>IFP NatureSmart Tree Mapping</h3>
@@ -1781,56 +1654,46 @@
                 QR-enabled tree information and geolocation features that
                 help visitors explore and learn about mapped trees.
               </p>
-              <a href="https://forest-monitering-system.vercel.app/" class="project-link">
-                View Project <span>→</span>
-              </a>
+              <a href="https://forest-monitering-system.vercel.app/" class="project-link">View Project
+                <span>→</span></a>
             </div>
           </article>
 
-        
-        <article class="project-card reveal">
-          <div class="project-image-wrap">
-            <img src="images/green-track-view.png" alt="Green Track View environmental project" class="project-image"
-              loading="lazy">
-            <span class="project-number">PROJECT 05</span>
-          </div>
-        
-          <div class="project-content">
-            <span class="project-category">Green Environment & Sustainability</span>
-            <h3>Green Track View</h3>
-            <p>
-              Promoting environmental awareness and sustainability through
-              green initiatives, nature conservation, and responsible practices.
-            </p>
-            <a href="https://green-mine-restore.vercel.app/" class="project-link">
-              View Project <span>→</span>
-            </a>
-          </div>
-        </article>
-        
+          <article class="project-card reveal">
+            <div class="project-image-wrap">
+              <img src="images/green-track-view.png" alt="Green Track View environmental project" class="project-image"
+                loading="lazy">
+              <span class="project-number">PROJECT 05</span>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Green Environment & Sustainability</span>
+              <h3>Green Track View</h3>
+              <p>
+                Promoting environmental awareness and sustainability through
+                green initiatives, nature conservation, and responsible practices.
+              </p>
+              <a href="https://green-mine-restore.vercel.app/" class="project-link">View Project <span>→</span></a>
+            </div>
+          </article>
 
-        
-        <article class="project-card reveal">
-          <div class="project-image-wrap">
-            <img src="images/world-environment-green-initiative.png" alt="World Environment Green Initiative"
-              class="project-image" loading="lazy">
-            <span class="project-number">PROJECT 06</span>
-          </div>
-        
-          <div class="project-content">
-            <span class="project-category">Environment & Green Initiatives</span>
-            <h3>World Environment Green Initiative</h3>
-            <p>
-              Promoting a greener future through environmental awareness,
-              sustainable practices, nature conservation, and collective
-              action to protect our planet.
-            </p>
-            <a href="https://world-environment-green-initiative.netlify.app/" class="project-link">
-              View Project <span>→</span>
-            </a>
-          </div>
-        </article>
-        
+          <article class="project-card reveal">
+            <div class="project-image-wrap">
+              <img src="images/world-environment-green-initiative.png" alt="World Environment Green Initiative"
+                class="project-image" loading="lazy">
+              <span class="project-number">PROJECT 06</span>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Environment & Green Initiatives</span>
+              <h3>World Environment Green Initiative</h3>
+              <p>
+                Promoting a greener future through environmental awareness,
+                sustainable practices, nature conservation, and collective
+                action to protect our planet.
+              </p>
+              <a href="https://world-environment-green-initiative.netlify.app/" class="project-link">View Project
+                <span>→</span></a>
+            </div>
+          </article>
 
         </div>
       </div>
@@ -1839,99 +1702,71 @@
     <!-- OUR CLIENTS -->
     <section class="clients-section" id="clients">
       <div class="container">
-
         <div class="section-heading reveal">
           <span class="eyebrow">Our Network</span>
           <h2>Our Clients & Partners</h2>
-          <p>
-            Building meaningful partnerships for a more sustainable future.
-          </p>
+          <p>Building meaningful partnerships for a more sustainable future.</p>
         </div>
-
       </div>
 
       <div class="client-marquee" aria-label="Our clients and partners" role="region">
-
         <div class="client-track">
 
-          <!-- FIRST GROUP -->
           <div class="client-group">
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-ccl.jpg" alt="CCL logo" class="client-logo" loading="lazy">
-              </div>
+              <div class="client-logo-wrap"><img src="images/client-ccl.jpg" alt="CCL logo" class="client-logo"
+                  loading="lazy"></div>
               <div class="client-name">CCL</div>
             </div>
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-bccl.jpg" alt="BCCL logo" class="client-logo" loading="lazy">
-              </div>
+              <div class="client-logo-wrap"><img src="images/client-bccl.jpg" alt="BCCL logo" class="client-logo"
+                  loading="lazy"></div>
               <div class="client-name">BCCL</div>
             </div>
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-ifp.jpg" alt="IFP logo" class="client-logo" loading="lazy">
-              </div>
+              <div class="client-logo-wrap"><img src="images/client-ifp.jpg" alt="IFP logo" class="client-logo"
+                  loading="lazy"></div>
               <div class="client-name">IFP</div>
             </div>
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-bitmesra.png" alt="BIT Mesra logo" class="client-logo" loading="lazy">
-              </div>
+              <div class="client-logo-wrap"><img src="images/client-bitmesra.png" alt="BIT Mesra logo"
+                  class="client-logo" loading="lazy"></div>
               <div class="client-name">BIT Mesra</div>
             </div>
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-sushee.jpg" alt="Sushee logo" class="client-logo" loading="lazy">
-              </div>
+              <div class="client-logo-wrap"><img src="images/client-sushee.jpg" alt="Sushee logo" class="client-logo"
+                  loading="lazy"></div>
               <div class="client-name">Sushee</div>
             </div>
-
           </div>
 
-          <!-- DUPLICATED GROUP FOR SEAMLESS LOOP -->
+          <!-- DUPLICATE GROUP FOR SEAMLESS LOOP -->
           <div class="client-group" aria-hidden="true">
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-ccl.jpg" alt="" class="client-logo" loading="lazy">
+              <div class="client-logo-wrap"><img src="images/client-ccl.jpg" alt="" class="client-logo" loading="lazy">
               </div>
               <div class="client-name">CCL</div>
             </div>
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-bccl.jpg" alt="" class="client-logo" loading="lazy">
+              <div class="client-logo-wrap"><img src="images/client-bccl.jpg" alt="" class="client-logo" loading="lazy">
               </div>
               <div class="client-name">BCCL</div>
             </div>
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-ifp.jpg" alt="" class="client-logo" loading="lazy">
+              <div class="client-logo-wrap"><img src="images/client-ifp.jpg" alt="" class="client-logo" loading="lazy">
               </div>
               <div class="client-name">IFP</div>
             </div>
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-bitmesra.jpg" alt="" class="client-logo" loading="lazy">
-              </div>
+              <div class="client-logo-wrap"><img src="images/client-bitmesra.png" alt="" class="client-logo"
+                  loading="lazy"></div>
               <div class="client-name">BIT Mesra</div>
             </div>
-
             <div class="client-card">
-              <div class="client-logo-wrap">
-                <img src="images/client-sushee.jpg" alt="" class="client-logo" loading="lazy">
-              </div>
+              <div class="client-logo-wrap"><img src="images/client-sushee.jpg" alt="" class="client-logo"
+                  loading="lazy"></div>
               <div class="client-name">Sushee</div>
             </div>
-
           </div>
 
         </div>
@@ -1956,62 +1791,44 @@
           <article class="service-card reveal">
             <div class="service-icon">🌱</div>
             <h3>Plantation & Greening</h3>
-            <p>
-              Plantation planning, field coordination and documentation
-              to support greener environments.
-            </p>
+            <p>Plantation planning, field coordination and documentation to support greener environments.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">🌳</div>
             <h3>Tree Mapping & Inventory</h3>
-            <p>
-              Digital tree identification, location mapping and
-              structured information for environmental assets.
-            </p>
+            <p>Digital tree identification, location mapping and structured information for environmental assets.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">📱</div>
             <h3>Digital Monitoring</h3>
-            <p>
-              Web-based reporting, image records and date-wise monitoring
-              to support project tracking.
-            </p>
+            <p>Web-based reporting, image records and date-wise monitoring to support project tracking.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">♻️</div>
             <h3>Environmental Management</h3>
-            <p>
-              Supporting responsible environmental practices and
-              project-specific sustainability initiatives.
-            </p>
+            <p>Supporting responsible environmental practices and project-specific sustainability initiatives.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">🗺️</div>
             <h3>GIS & Geolocation Solutions</h3>
-            <p>
-              Location-based information and mapping experiences for
-              field assets, trails and tree records.
-            </p>
+            <p>Location-based information and mapping experiences for field assets, trails and tree records.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">🌍</div>
             <h3>Eco-Tourism & Awareness</h3>
-            <p>
-              Nature trails, interpretation and digital information
-              to encourage environmental learning.
-            </p>
+            <p>Nature trails, interpretation and digital information to encourage environmental learning.</p>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- PROCESS -->
+    <!-- PROCESS / OUR APPROACH -->
     <section class="section" id="process">
       <div class="container">
 
@@ -2029,40 +1846,37 @@
           <div class="process-item reveal">
             <span class="process-number">01</span>
             <h3>Understand</h3>
-            <p>
-              Understand the objectives, site conditions and requirements
-              of each project.
-            </p>
+            <p>Understand the objectives, site conditions and requirements of each project.</p>
           </div>
 
           <div class="process-item reveal">
             <span class="process-number">02</span>
             <h3>Plan</h3>
-            <p>
-              Develop a practical approach with clear activities,
-              responsibilities and implementation priorities.
-            </p>
+            <p>Develop a practical approach with clear activities, responsibilities and implementation priorities.</p>
           </div>
 
           <div class="process-item reveal">
             <span class="process-number">03</span>
             <h3>Implement</h3>
-            <p>
-              Coordinate field activities and apply appropriate
-              technology and documentation.
-            </p>
+            <p>Coordinate field activities and apply appropriate technology and documentation.</p>
           </div>
 
           <div class="process-item reveal">
             <span class="process-number">04</span>
             <h3>Monitor</h3>
-            <p>
-              Review progress, maintain records and identify
-              opportunities for improvement.
-            </p>
+            <p>Review progress, maintain records and identify opportunities for improvement.</p>
           </div>
 
         </div>
+
+        <!-- WORKFLOW IMAGE -->
+        <div class="approach-image reveal">
+          <div class="approach-scroll">
+            <img src="images/workflow.jpg"
+              alt="Our workflow: Assess, Select & Plan, Plant, Maintain, Monitor & Report" loading="lazy">
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -2072,25 +1886,18 @@
 
         <div class="impact-content reveal">
           <span class="eyebrow">Make a Difference</span>
-
           <h2>Every Small Step Can Create a Lasting Environmental Impact.</h2>
-
           <p>
             Meaningful change starts with a clear intention and the right
             action. Let's collaborate on projects that contribute to
             greener spaces, better awareness and sustainable progress.
           </p>
-
-          <a href="#contact" class="btn btn-primary">
-            Let's Talk About Your Project →
-          </a>
+          <a href="#contact" class="btn btn-primary">Let's Talk About Your Project →</a>
         </div>
 
         <div class="impact-quote reveal">
           <div class="quote-mark">“</div>
-          <blockquote>
-            The future depends on the solutions we create today.
-          </blockquote>
+          <blockquote>The future depends on the solutions we create today.</blockquote>
           <p>INTENT TO SOLUTION · I2S</p>
         </div>
 
@@ -2116,14 +1923,10 @@
             <div class="team-image-wrap">
               <img src="images/team-1.jpg" alt="Director profile" class="team-image" loading="lazy">
             </div>
-
             <div class="team-info">
               <h3>Director Name</h3>
               <span class="team-role">Board of Directors</span>
-              <p>
-                Providing strategic direction and supporting the
-                organisation's long-term vision.
-              </p>
+              <p>Providing strategic direction and supporting the organisation's long-term vision.</p>
             </div>
           </article>
 
@@ -2131,14 +1934,10 @@
             <div class="team-image-wrap">
               <img src="images/team-2.jpg" alt="Management team member" class="team-image" loading="lazy">
             </div>
-
             <div class="team-info">
               <h3>Management Name</h3>
               <span class="team-role">Management</span>
-              <p>
-                Coordinating operations and helping translate
-                project objectives into action.
-              </p>
+              <p>Coordinating operations and helping translate project objectives into action.</p>
             </div>
           </article>
 
@@ -2146,14 +1945,10 @@
             <div class="team-image-wrap">
               <img src="images/team-3.jpg" alt="Project team member" class="team-image" loading="lazy">
             </div>
-
             <div class="team-info">
               <h3>Team Member Name</h3>
               <span class="team-role">Project Team</span>
-              <p>
-                Supporting project execution, coordination and
-                delivery through collaborative teamwork.
-              </p>
+              <p>Supporting project execution, coordination and delivery through collaborative teamwork.</p>
             </div>
           </article>
 
@@ -2163,102 +1958,51 @@
 
     <!-- CONTACT -->
     <section class="section contact-section" id="contact">
-      <div class="container contact-grid">
+      <div class="container">
 
-        <div class="contact-info reveal">
+        <div class="section-heading reveal">
           <span class="eyebrow">Get In Touch</span>
-
           <h2>Let's Build Something Meaningful Together.</h2>
-
-          <p>
-            Have an environmental initiative, plantation project or
-            digital solution in mind? Tell us about it and let's explore
-            how we can work together.
-          </p>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon">📍</div>
-            <div>
-              <strong>Our Office</strong>
-              <span>Update with your official office address</span>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon">✉</div>
-            <div>
-              <strong>Email Us</strong>
-              <a href="mailto:your-email@example.com">
-                your-email@example.com
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon">☎</div>
-            <div>
-              <strong>Call Us</strong>
-              <a href="tel:+910000000000">+91 XXXXX XXXXX</a>
-            </div>
-          </div>
+          <p>Have an environmental initiative, plantation project or digital solution in mind? Reach out to us.</p>
         </div>
 
-        <form class="contact-form reveal" id="contactForm">
+        <div class="contact-cards">
 
-          <h3>Send Us a Message</h3>
-          <p class="form-intro">
-            Share a few details and we'll be ready to discuss your project.
-          </p>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required>
-            </div>
+          <div class="contact-card reveal">
+            <div class="contact-detail-icon">📍</div>
+            <h3>Headquarter</h3>
+            <p>3rd Floor, Swastik Mohini Tower,<br>Sakchi, Jamshedpur,<br>Jharkhand 831001</p>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-            </div>
-
-            <div class="form-group">
-              <label for="service">Area of Interest</label>
-              <select id="service" name="service">
-                <option value="">Select a service</option>
-                <option value="Plantation">Plantation & Greening</option>
-                <option value="Tree Mapping">Tree Mapping</option>
-                <option value="Digital Monitoring">Digital Monitoring</option>
-                <option value="Environmental Management">Environmental Management</option>
-                <option value="GIS">GIS & Geolocation</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
+          <div class="contact-card reveal">
+            <div class="contact-detail-icon">🏢</div>
+            <h3>Office</h3>
+            <p>Huhurru, Babapath,<br>Hazaribagh</p>
           </div>
 
-          <div class="form-group">
-            <label for="message">Your Message *</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project or requirements..."
-              required></textarea>
+          <div class="contact-card reveal">
+            <div class="contact-detail-icon">✉</div>
+            <h3>Email</h3>
+            <p class="copy-row"><a href="mailto:vikash@i2s.in">vikash@i2s.in</a>
+              <button class="copy-btn" data-copy="vikash@i2s.in">Copy</button>
+            </p>
+            <p class="copy-row"><a href="mailto:rohit@i2s.in">rohit@i2s.in</a>
+              <button class="copy-btn" data-copy="rohit@i2s.in">Copy</button>
+            </p>
+            <!-- <p class="copy-row"><a href="mailto:email3@example.com">email3@example.com</a>
+              <button class="copy-btn" data-copy="email3@example.com">Copy</button>
+            </p> -->
           </div>
 
-          <button type="submit" class="btn btn-primary">
-            Send Message <span>→</span>
-          </button>
+          <div class="contact-card reveal">
+            <div class="contact-detail-icon">☎</div>
+            <h3>Phone</h3>
+            <p class="copy-row"><a href="tel:+919891843471">+91 98918 43471</a>
+              <button class="copy-btn" data-copy="+91 98918 43471">Copy</button>
+            </p>
+          </div>
 
-          <p class="form-note">
-            Connect your preferred form service or backend to receive
-            submissions.
-          </p>
-
-        </form>
-
+        </div>
       </div>
     </section>
 
@@ -2273,7 +2017,6 @@
         <div class="footer-brand">
           <a href="#home" class="brand">
             <img src="images/i2s-logo.jpeg" alt="I2S Logo" class="brand-logo" onerror="this.style.display='none'">
-
             <div class="brand-name">
               I2S
               <small>INTENT TO SOLUTION PVT. LTD.</small>
@@ -2312,10 +2055,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>
-          © <span id="currentYear"></span> Intent to Solution Pvt. Ltd.
-          All rights reserved.
-        </p>
+        <p>© <span id="currentYear"></span> Intent to Solution Pvt. Ltd. All rights reserved.</p>
         <p>Designed with purpose. Built for a greener future. 🌱</p>
       </div>
 
@@ -2331,17 +2071,11 @@
 
     navToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
-
       navToggle.setAttribute("aria-expanded", String(isOpen));
-      navToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-      );
-
+      navToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
       navToggle.textContent = isOpen ? "×" : "☰";
     });
 
-    // CLOSE MOBILE MENU AFTER CLICKING A LINK
     document.querySelectorAll("#navLinks a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("open");
@@ -2354,30 +2088,19 @@
     // HERO SLIDESHOW
     const slides = Array.from(document.querySelectorAll(".hero-slide"));
     const dots = Array.from(document.querySelectorAll(".hero-dot"));
-
     let currentSlide = 0;
     let slideshowTimer;
 
     function showSlide(index) {
       if (!slides.length) return;
-
       currentSlide = (index + slides.length) % slides.length;
-
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === currentSlide);
-      });
-
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === currentSlide);
-      });
+      slides.forEach((slide, i) => slide.classList.toggle("active", i === currentSlide));
+      dots.forEach((dot, i) => dot.classList.toggle("active", i === currentSlide));
     }
 
     function startSlideshow() {
       clearInterval(slideshowTimer);
-
-      slideshowTimer = setInterval(() => {
-        showSlide(currentSlide + 1);
-      }, 4000);
+      slideshowTimer = setInterval(() => showSlide(currentSlide + 1), 4000);
     }
 
     dots.forEach((dot, index) => {
@@ -2389,16 +2112,12 @@
 
     startSlideshow();
 
-    // PAUSE SLIDESHOW WHEN TAB IS NOT VISIBLE
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        clearInterval(slideshowTimer);
-      } else {
-        startSlideshow();
-      }
+      if (document.hidden) clearInterval(slideshowTimer);
+      else startSlideshow();
     });
 
-    // REVEAL ELEMENTS ON SCROLL
+    // REVEAL ON SCROLL
     const revealElements = document.querySelectorAll(".reveal");
 
     if ("IntersectionObserver" in window) {
@@ -2409,20 +2128,14 @@
             observer.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.12
-      });
+      }, { threshold: 0.12 });
 
-      revealElements.forEach(element => {
-        revealObserver.observe(element);
-      });
+      revealElements.forEach(el => revealObserver.observe(el));
     } else {
-      revealElements.forEach(element => {
-        element.classList.add("in-view");
-      });
+      revealElements.forEach(el => el.classList.add("in-view"));
     }
 
-    // BACK TO TOP BUTTON
+    // BACK TO TOP
     const backToTop = document.getElementById("backToTop");
 
     window.addEventListener("scroll", () => {
@@ -2430,35 +2143,26 @@
     });
 
     backToTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
     // CURRENT YEAR
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-    // CONTACT FORM DEMO
-    // This validates the form but does not send or store submissions.
-    const contactForm = document.getElementById("contactForm");
-
-    contactForm.addEventListener("submit", event => {
-      event.preventDefault();
-
-      if (!contactForm.reportValidity()) return;
-
-      alert(
-        "Thank you for contacting I2S! This demo form is ready for backend integration."
-      );
-
-      // Integrate your API, Flask/Node.js backend, Formspree,
-      // or another form service here before using this form in production.
+    // COPY BUTTONS
+    document.querySelectorAll(".copy-btn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(btn.dataset.copy);
+          btn.textContent = "Copied ✓";
+        } catch {
+          btn.textContent = "Select text";
+        }
+        setTimeout(() => (btn.textContent = "Copy"), 1500);
+      });
     });
   </script>
 
 </body>
 
-</html> 
-
+</html>
